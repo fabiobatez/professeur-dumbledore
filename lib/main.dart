@@ -705,9 +705,16 @@ class _VoiceCoachPageState extends State<VoiceCoachPage> {
           appBar: AppBar(
             title: Row(
               children: [
-                Image.asset(
-                  'assets/images/Logo1FabriceAdanlessossi.png',
-                  height: 40,
+                Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFD6EFDE),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Image.asset(
+                    'assets/images/Logo1FabriceAdanlessossi.png',
+                    height: 40,
+                  ),
                 ),
                 const SizedBox(width: 12),
                 const Expanded(child: AnimatedGradientText('Professeur Dumbledore')),
