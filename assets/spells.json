@@ -1,0 +1,14 @@
+{
+  "spells": [
+    {"name": "Expelliarmus", "aliases": ["expelliarmus", "expelliarmus !"]},
+    {"name": "Lumos", "aliases": ["lumos", "lumos maxima"]},
+    {"name": "Nox", "aliases": ["nox"]},
+    {"name": "Wingardium Leviosa", "aliases": ["wingardium leviosa", "leviosa"]},
+    {"name": "Expecto Patronum", "aliases": ["expecto patronum", "patronum"]},
+    {"name": "Accio", "aliases": ["accio", "accio objet"]},
+    {"name": "Alohomora", "aliases": ["alohomora"]},
+    {"name": "Protego", "aliases": ["protego", "protego totalum"]},
+    {"name": "Stupefy", "aliases": ["stupefy", "stupefix", "stupéfix"]},
+    {"name": "Obliviate", "aliases": ["obliviate"]}
+  ]
+}
