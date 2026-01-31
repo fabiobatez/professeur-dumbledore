@@ -1,27 +1,31 @@
 #!/bin/bash
-
-# Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "Installing Flutter..."
+echo "Current directory: $(pwd)"
 
-# Clone Flutter
-git clone https://github.com/flutter/flutter.git -b stable --depth 1
+# Install Flutter
+if [ -d "flutter" ]; then
+  echo "Flutter directory exists, skipping clone..."
+else
+  echo "Cloning Flutter..."
+  git clone https://github.com/flutter/flutter.git -b stable --depth 1
+fi
 
-# Add flutter to PATH
-export PATH="$PATH:`pwd`/flutter/bin"
+export PATH="$PATH:$(pwd)/flutter/bin"
 
-# Run flutter doctor to download dependencies
-flutter doctor -v
+echo "Flutter version:"
+flutter --version
 
 echo "Enabling Web..."
 flutter config --enable-web
+
+echo "Cleaning build..."
+flutter clean
 
 echo "Getting dependencies..."
 flutter pub get
 
 echo "Building Web App..."
-# Build web release
-flutter build web --release --no-tree-shake-icons
+# Running with --verbose to capture detailed logs in case of failure
+flutter build web --release --no-tree-shake-icons --verbose
 
-echo "Build complete."
