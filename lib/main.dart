@@ -703,7 +703,16 @@ class _VoiceCoachPageState extends State<VoiceCoachPage> {
         const Positioned.fill(child: MagicBackground(intensity: 0.9)),
         Scaffold(
           appBar: AppBar(
-            title: const AnimatedGradientText('Professeur Dumbledore'),
+            title: Row(
+              children: [
+                Image.asset(
+                  'assets/images/Logo1FabriceAdanlessossi.png',
+                  height: 40,
+                ),
+                const SizedBox(width: 12),
+                const Expanded(child: AnimatedGradientText('Professeur Dumbledore')),
+              ],
+            ),
             backgroundColor: Colors.transparent,
             elevation: 0,
             actions: [
