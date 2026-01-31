@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bash build.sh",
+  "buildCommand": "echo 'Using pre-built assets'",
   "outputDirectory": "build/web",
   "rewrites": [
     {
