@@ -4,12 +4,11 @@ set -e
 echo "Current directory: $(pwd)"
 
 # Install Flutter
-if [ -d "flutter" ]; then
-  echo "Flutter directory exists, skipping clone..."
-else
-  echo "Cloning Flutter..."
-  git clone https://github.com/flutter/flutter.git -b stable --depth 1
-fi
+# We remove the existing directory to ensure we install the specific version matching the local environment
+rm -rf flutter
+
+echo "Cloning Flutter 3.29.2..."
+git clone https://github.com/flutter/flutter.git -b 3.29.2 --depth 1
 
 export PATH="$PATH:$(pwd)/flutter/bin"
 
