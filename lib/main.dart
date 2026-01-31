@@ -713,7 +713,7 @@ class _VoiceCoachPageState extends State<VoiceCoachPage> {
                   ),
                   child: Image.asset(
                     'assets/images/Logo1FabriceAdanlessossi.png',
-                    height: 40,
+                    height: 60,
                   ),
                 ),
                 const SizedBox(width: 12),
