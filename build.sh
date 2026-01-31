@@ -7,10 +7,16 @@ echo "Current directory: $(pwd)"
 # We remove the existing directory to ensure we install the specific version matching the local environment
 rm -rf flutter
 
-echo "Cloning Flutter 3.29.2..."
-git clone https://github.com/flutter/flutter.git -b 3.29.2 --depth 1
+echo "Cloning Flutter (Specific Commit)..."
+git clone https://github.com/flutter/flutter.git stable_flutter --depth 100
+cd stable_flutter
+# Checkout the specific revision c236373904 (Flutter 3.29.2) matching local environment
+git checkout c236373904
+cd ..
+mv stable_flutter flutter
 
-export PATH="$PATH:$(pwd)/flutter/bin"
+# Prepend to PATH to ensure our version is used instead of any system pre-installed version
+export PATH="$(pwd)/flutter/bin:$PATH"
 
 echo "Flutter version:"
 flutter --version
